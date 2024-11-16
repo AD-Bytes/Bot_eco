@@ -9,10 +9,16 @@ def bot():
     bot = commands.Bot(command_prefix='$', intents=intents)
 
     @bot.event
-    async def on_ready():
+    async def on_ready(ctx):
         print(f'We have logged in as {bot.user}')
-
+        
     @bot.command()
+    async def Help(ctx):
+
+        await ctx.send("Hola, soy un bot pato-ecologo-filosofo-astronauta, Estoy aqui para resolver tus dudas sobre la ecologia \n Puedes pedirme un consejo con: $Dame_un_Consejo \n Tambien puedes recibir informacion de distintos tipos de contaminacion usando: $Que_tipos_de_contaminacion_exiten \n como lo puedes notar la magia empieza con el simbolo '$' Este se usa para detectar que ahi empieza un comanzo, si quieres poner un comando, comienza por ahi. ")
+
+
+    @bot.command()   
     async def hello(ctx):
         await ctx.send(f'Hola, soy un bot {bot.user}! Me gusta la ecologia.')
 
@@ -38,6 +44,7 @@ def bot():
         
     
 
-    bot.run("")
+    bot.run("TOKEN HERE")
 
 bot()
+
